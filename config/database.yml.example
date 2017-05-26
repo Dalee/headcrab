@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: headcrab_development
+  username: headcrab
+  password: 
+  host: localhost
+
+test:
+  <<: *default
+  database: headcrab_test
+
+production:
+  <<: *default
+  database: headcrab_production
+  username: headcrab
+  password: <%= ENV['HEADCRAB_DATABASE_PASSWORD'] %>

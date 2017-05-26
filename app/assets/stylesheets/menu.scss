@@ -1,0 +1,26 @@
+.menu {
+  float: right;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+  &__item {
+    color: #777777;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 15px;
+    height: 48px;
+    line-height: 48px;
+    text-decoration: none;
+
+    & + & {
+      margin-left: 32px;
+    }
+  }
+}

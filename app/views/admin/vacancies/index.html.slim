@@ -1,0 +1,65 @@
+- model_class = object_class
+.page-header
+  h1
+    =t '.title', default: model_class.model_name.human.pluralize.titleize
+= search_form_for @search, url: search_admin_vacancies_path, html: {method: :get, class: "form-inline"} do |f|
+  p.lead
+    | Поиск
+  .form-group
+    span
+      = f.text_field search_field_name, class: "form-control", placeholder: "Поиск ..."
+  .form-group
+    span
+      = f.submit t('.search', default: t("helpers.links.search")), class: 'btn btn-primary'
+      = link_to t('.reset', default: t("helpers.links.reset")), admin_vacancies_path, class: 'btn btn-warning'
+p.lead
+= link_to t('.new', default: t("helpers.links.new")),
+             new_admin_vacancy_path,
+             class: 'btn btn-primary'
+= paginate @objects, theme: "admin"
+table.table.table-striped
+  thead
+    tr
+      th
+        = model_class.human_attribute_name(:id)
+      th
+        = model_class.human_attribute_name(:title)
+      th
+        = model_class.human_attribute_name(:contact_info)
+      th
+        = sort_link(@search, :expires_at)
+      th
+        = model_class.human_attribute_name(:salary)
+      th
+        = sort_link(@search, :created_at)
+      th.col-lg-3
+        =t '.actions', default: t("helpers.actions")
+  tbody
+    - @objects.each do |vacancy|
+      tr
+        td
+          = link_to vacancy.id, admin_vacancy_path(vacancy)
+        td
+          = vacancy.title
+        td
+          = vacancy.contact_info
+        td
+          = l vacancy.expires_at if vacancy.expires_at
+        td
+          = vacancy.salary
+        td
+          = l vacancy.created_at
+        td
+          = link_to t('.show', default: t("helpers.links.show")),
+                                 admin_vacancy_path(vacancy), class: 'btn btn-info btn-sm'
+          = link_to t('.edit', default: t("helpers.links.edit")),
+                                 edit_admin_vacancy_path(vacancy), class: 'btn btn-warning btn-sm'
+          = link_to t('.destroy', default: t("helpers.links.destroy")),
+                                 admin_vacancy_path(vacancy),
+                                 method: :delete,
+                                 data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) },
+                                 class: 'btn btn-mini btn-danger btn-sm'
+= paginate @objects, theme: "admin"
+= link_to t('.new', default: t("helpers.links.new")),
+             new_admin_vacancy_path,
+             class: 'btn btn-primary'

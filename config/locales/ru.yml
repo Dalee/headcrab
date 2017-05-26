@@ -1,0 +1,114 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        skill:
+          attributes:
+        resume:
+          attributes:
+            contact_info:
+              must_have_phone_or_email: 'Должна содержать телефон или email'
+            name:
+              must_have_three_parts: 'Должно содержать фамилию, имя и отчество и состоять из трех частей'
+              must_be_cyrillic: 'Может содержать только кириллические символы'
+
+    models:
+      skill: 'Навык'
+      vacancy: 'Вакансия'
+      resume: 'Резюме'
+    attributes:
+      timestamps: &timestamps
+        created_at: 'Дата создания'
+        updated_at: 'Дата модификации'
+      skills: &skills
+        skills: 'Навыки'
+        skill: 'Навык'
+      skill:
+        title: 'Название'
+        <<: *timestamps
+      vacancy:
+        title: 'Название'
+        contact_info: 'Контактная информация'
+        expires_at: 'Срок действия'
+        salary: 'Зарплата'
+        <<: *skills
+        <<: *timestamps
+      resume:
+        name: 'Имя соискателя'
+        contact_info: 'Контактная информация'
+        job_search_status: 'В поиске работы'
+        expected_salary: 'Ожидаемая зарплата'
+        <<: *skills
+        <<: *timestamps
+
+  helpers:
+    links:
+      edit: 'Редактировать'
+      destroy: 'Удалить'
+      confirm: 'Вы уверены?'
+      new: 'Создать'
+      back: 'Назад'
+      cancel: 'Отмена'
+      search: 'Поиск'
+      reset:  'Сброс'
+      show: 'Просмотр'
+    actions: 'Действия'
+    titles:
+      edit: 'Редактировать %{model}'
+      save: 'Сохранить %{model}'
+      new: 'Создать %{model}'
+      delete: 'Удалить %{model}'
+
+  admin:
+    skills_widget:
+      no_results_found: 'Навыки не найдены'
+      select_placeholder: 'Выберите один или несколько навыков'
+      or_enter_new: ' ... или укажите новый'
+
+    messages:
+      object_created: 'Объект %{model} успешно создан'
+      object_updated: 'Объект %{model} обновлён'
+      object_deleted: 'Объект %{model} удалён!'
+      error_happens: 'При сохранении объекта произошли ошибки'
+
+    skills:
+      index:
+        title: 'Навыки'
+      new:
+        title: 'Новый Навык'
+      edit:
+        title: 'Редактировать Навык'
+      form:
+        save: 'Сохранить Навык'
+    vacancies:
+      index:
+        title: 'Вакансии'
+      new:
+        title: 'Новая Вакансия'
+      edit:
+        title: 'Редактировать Вакансию'
+      form:
+        save: 'Сохранить Вакансию'
+    resumes:
+      index:
+        title: 'Резюме'
+      new:
+        title: 'Новое Резюме'
+      edit:
+        title: 'Редактировать Резюме'
+      form:
+        save: 'Сохранить Резюме'
+
+  views:
+    pagination:
+      first: 'Начало'
+      previous: 'Пред.'
+      next: 'След.'
+      last: 'Конец'
+      truncate: '…'
+
+  faker:
+    name:
+      name_with_middle:
+        - "#{male_last_name} #{male_first_name} #{male_middle_name}"
+        - "#{female_last_name} #{female_first_name} #{female_middle_name}"

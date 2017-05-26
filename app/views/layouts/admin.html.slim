@@ -1,0 +1,41 @@
+doctype html
+html[lang="en"]
+  head
+    meta[charset="utf-8"]
+    meta[http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"]
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    title
+      | HeadCrab.Ru - Панель управления
+    = csrf_meta_tags
+    = stylesheet_link_tag "admin/application", media: "all"
+    - #= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png', sizes: '144x144'
+    - #= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png', sizes: '114x114'
+    - #= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png', sizes: '72x72'
+    - #= favicon_link_tag 'apple-touch-icon-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png'
+    = favicon_link_tag
+    = javascript_include_tag "admin/application"
+  body
+    .navbar.navbar-default.navbar-static-top
+      .container
+        button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"]
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        = link_to "HeadCrab.Ru", admin_root_path, class: "navbar-brand"
+        .navbar-collapse.collapse.navbar-responsive-collapse
+          ul.nav.navbar-nav
+            li
+              = link_to t('admin.resumes.index.title'), admin_resumes_path
+            li
+              = link_to t('admin.vacancies.index.title'), admin_vacancies_path
+            li
+              = link_to t('admin.skills.index.title'), admin_skills_path
+    .container
+      .row
+        .col-lg-12
+          = bootstrap_flash
+          = yield
+      footer
+        p
+          | © HeadCrab.Ru 
+          =Time.now.utc.year

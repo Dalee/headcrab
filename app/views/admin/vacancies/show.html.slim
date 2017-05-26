@@ -1,0 +1,47 @@
+- model_class = object_class
+.page-header
+  h1
+    =t '.title', default: model_class.model_name.human.titleize
+dl.dl-horizontal
+  dt
+    strong
+      = model_class.human_attribute_name(:title)
+  dd
+    = @object.title
+  dt
+    strong
+      = model_class.human_attribute_name(:contact_info)
+  dd
+    = @object.contact_info
+  dt
+    strong
+      = model_class.human_attribute_name(:expires_at)
+  dd
+    = l @object.expires_at if @object.expires_at
+  dt
+    strong
+      = model_class.human_attribute_name(:salary)
+  dd
+    = @object.salary
+  dt
+    strong
+      = model_class.human_attribute_name(:skills)
+  dd
+    = @object.skills_list
+  dd
+    = l @object.created_at
+  dt
+    strong
+      = model_class.human_attribute_name(:updated_at)
+  dd
+    = l @object.updated_at
+.form-actions
+  = link_to t('.back', default: t("helpers.links.back")),
+                 admin_vacancies_path, class: 'btn btn-default'
+  = link_to t('.edit', default: t("helpers.links.edit")),
+                 edit_admin_vacancy_path(@object), class: 'btn btn-warning'
+  = link_to t('.destroy', default: t("helpers.links.destroy")),
+                 admin_vacancy_path(@object),
+                 method: 'delete',
+                 data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) },
+                 class: 'btn btn-danger'

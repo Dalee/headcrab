@@ -1,0 +1,27 @@
+.vacancy {
+  padding: 20px 0;
+  position: relative;
+
+  & + & {
+    border-top: 1px solid #E6E6E6;
+  }
+  &__name {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &__link {
+    color: #333333;
+    text-decoration: none;
+  }
+  &__date {
+    color: #777777;
+    font-size: 14px;
+    line-height: 20px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+  &__salary {
+    color: #68c07b;
+  }
+}

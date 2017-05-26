@@ -1,0 +1,21 @@
+.detail-resume {
+  &__name {
+    font-size: 15px;
+    margin: 0 0 20px 0;
+  }
+  &__item {
+    margin: 10px 0;
+  }
+  &__label {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  &__value {
+    margin: 10px 0;
+
+    p {
+      margin: 4px 0;
+    }
+  }
+}

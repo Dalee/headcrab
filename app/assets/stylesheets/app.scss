@@ -1,0 +1,17 @@
+.app {
+  &__head {
+    background: #FFFFFF;
+    height: 96px;
+    padding: 24px 0;
+    position: relative;
+    z-index: 1000;
+  }
+  &__body {
+    min-height: calc(100vh - 128px);
+    padding: 24px 0;
+  }
+  &__foot {
+    height: 32px;
+    padding: 8px 0;
+  }
+}

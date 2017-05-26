@@ -1,0 +1,11 @@
+.logo {
+  float: left;
+
+  &__link {
+    display: block;
+  }
+  &__image {
+    display: block;
+    height: 48px;
+  }
+}

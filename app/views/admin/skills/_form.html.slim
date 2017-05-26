@@ -1,0 +1,18 @@
+= form_for [:admin, @object], html: { class: "form-horizontal col-lg-6" } do |f|
+  - if @object.errors.any?
+    blockquote
+      p.lead.text-danger
+        = t('admin.messages.error_happens')
+        | :
+      ul
+        - @object.errors.full_messages.each do |message|
+          li.text-danger
+            = message
+  .form-group
+    = f.label :title, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :title, class: 'form-control'
+  .col-sm-offset-2.col-sm-10
+    = f.submit t('.save'), class: 'btn btn-primary'
+    = link_to t('.cancel', default: t("helpers.links.cancel")),
+                     admin_skills_path, class: 'btn btn-default'

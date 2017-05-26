@@ -1,0 +1,38 @@
+= form_for [:admin, @object], html: { class: "form-horizontal col-lg-6" } do |f|
+  - if @object.errors.any?
+    blockquote
+      p.lead.text-danger
+        = t('admin.messages.error_happens')
+        | :
+      ul
+        - @object.errors.full_messages.each do |message|
+          li.text-danger
+            = message
+  .form-group
+    = f.label :name, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :contact_info, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_area :contact_info, class: 'form-control', rows: 5
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      .checkbox
+        = f.label :job_search_status do
+          = f.check_box :job_search_status
+          b
+            = object_class.human_attribute_name(:job_search_status)
+            | ?
+  .form-group
+    = f.label :expected_salary, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :expected_salary, class: 'form-control'
+  .form-group
+    = f.label :skills, class: "col-sm-2 control-label"
+    .col-sm-10
+      = @object.choose_skills_widget f
+  .col-sm-offset-2.col-sm-10
+    = f.submit t('.save'), class: 'btn btn-primary'
+    = link_to t('.cancel', default: t("helpers.links.cancel")),
+                     admin_resumes_path, class: 'btn btn-default'

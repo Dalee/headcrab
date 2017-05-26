@@ -1,0 +1,19 @@
+.related-vacancy {
+  padding: 10px 0;
+  position: relative;
+
+  & + & {
+    border-top: 1px solid #E6E6E6;
+  }
+  &__title {
+    font-size: 14px;
+  }
+  &__link {
+    color: #333333;
+    text-decoration: none;
+  }
+  &__salary {
+    color: #68c07b;
+    margin-top: 8px;
+  }
+}

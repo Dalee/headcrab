@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background: #EEEEEE;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+}
+a {
+  background-color: transparent;
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+
+  &:focus {
+    outline: none;
+  }
+}
+b {
+  font-weight: bold;
+}
+blockquote {
+  quotes: none;
+}
+button {
+  -webkit-appearance: button;
+  font-family: inherit;
+  text-transform: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+em {
+  font-style: italic;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: initial;
+  font-weight: initial;
+  margin: 0;
+}
+i {
+  font-style: italic;
+}
+img {
+  border: none;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+}
+input {
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+  }
+  &[type="button"] {
+    -webkit-appearance: button;
+  }
+  &[type="date"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+  }
+  &[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  &[type="reset"] {
+    -webkit-appearance: button;
+  }
+  &[type="search"] {
+    -webkit-appearance: textfield;
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+  }
+  &[type="submit"] {
+    -webkit-appearance: button;
+  }
+}
+q {
+  quotes: none;
+}
+select {
+  font-family: inherit;
+  text-transform: none;
+}
+select:focus {
+  outline: none;
+}
+strong {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+textarea {
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+[hidden] {
+  display: none;
+}
+
+:-moz-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+::-moz-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+:-ms-input-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}

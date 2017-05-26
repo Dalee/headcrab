@@ -1,0 +1,42 @@
+.resumes-list {
+  background: #FFFFFF;
+  padding: 10px;
+
+  &__head {
+    padding: 10px;
+  }
+  &__body {
+    padding: 10px;
+  }
+  &__title {
+    color: #777777;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__form {
+    position: relative;
+  }
+  &__area {
+    border: 1px solid #DDDDDD;
+    font-size: 15px;
+    height: 40px;
+    padding: 0 128px 0 8px;
+    width: 100%;
+
+    &:focus {
+      border: 1px solid #68c07b;
+    }
+  }
+  &__send {
+    background: #68c07b;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 15px;
+    height: 32px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    width: 120px;
+  }
+}

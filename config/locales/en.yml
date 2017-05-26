@@ -1,0 +1,108 @@
+en:
+  activerecord:
+    errors:
+      models:
+        skill:
+          attributes:
+        resume:
+          attributes:
+            contact_info:
+              must_have_phone_or_email: 'Must contain phone or email'
+            name:
+              must_have_three_parts: 'Must have three parts'
+              must_be_cyrillic: 'Can contain only Cyrillic letters and spaces'
+
+    models:
+      skill: 'Skill'
+      vacancy: 'Vacancy'
+      resume: 'CV'
+    attributes:
+      timestamps: &timestamps
+        created_at: 'Created At'
+        updated_at: 'Updated At'
+      skills: &skills
+        skills: 'Skills'
+        skill: 'Skill'
+      skill:
+        title: 'Title'
+        <<: *timestamps
+      vacancy:
+        title: 'Title'
+        contact_info: 'Contact information'
+        expires_at: 'Expires At'
+        salary: 'Salary'
+        <<: *skills
+        <<: *timestamps
+      resume:
+        name: 'Name'
+        contact_info: 'Contact information'
+        job_search_status: 'In search'
+        expected_salary: 'Expected Salary'
+        <<: *skills
+        <<: *timestamps
+
+  helpers:
+    links:
+      edit: 'Edit'
+      destroy: 'Delete`'
+      confirm: 'Are you sure?'
+      new: 'New'
+      back: 'Back'
+      cancel: 'Cancel'
+      search: 'Search'
+      reset:  'Reset'
+      show: 'Show'
+    actions: 'Action'
+    titles:
+      edit: 'Edit %{model}'
+      save: 'Save %{model}'
+      new: 'New %{model}'
+      delete: 'Delete %{model}'
+
+  admin:
+    skills_widget:
+      no_results_found: 'No skills found'
+      select_placeholder: 'Choose one or multiple skills'
+      or_enter_new: ' ... or create a new one'
+
+    messages:
+      object_created: '%{model} created successifuly'
+      object_updated: '%{model} updated'
+      object_deleted: '%{model} deleted'
+      error_happens: 'Deletion error'
+
+    skills:
+      index:
+        title: 'Skills'
+      new:
+        title: 'New skill'
+      edit:
+        title: 'Edit skill'
+      form:
+        save: 'Save Skill'
+    vacancies:
+      index:
+        title: 'Vacancies'
+      new:
+        title: 'New Vacancy'
+      edit:
+        title: 'Edit Vacancy'
+      form:
+        save: 'Save Vacancy'
+    resumes:
+      index:
+        title: 'CV'
+      new:
+        title: 'New CV'
+      edit:
+        title: 'Edit CV'
+      form:
+        save: 'Save CV'
+
+  views:
+    pagination:
+      first: 'First'
+      previous: 'Previous'
+      next: 'Next'
+      last: 'Last'
+      truncate: '…'

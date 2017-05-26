@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title
+      | HeadCrab
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    div#app.app
+      div.app__head
+        div.layout
+          div.logo
+            = link_to root_path, class: 'logo__link' do
+              img.logo__image src=asset_url('logo.svg') /
+          div.menu
+            = link_to 'Главная', root_path, class: 'menu__item'
+            = link_to 'Специалисты', resumes_path, class: 'menu__item'
+            = link_to 'Вакансии', vacancies_path, class: 'menu__item'
+      div.app__body
+        div.layout
+          == yield
+      div.app__foot
+        div.layout
+          div.copyright
+            | © HeadCrab, 
+            = Time.now.utc.year

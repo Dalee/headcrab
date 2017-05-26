@@ -1,0 +1,10 @@
+host=dev4.dnet
+server=headcrab.ruby20.dalee.ru
+ruby=2.2.0
+apache-version=ruby20
+strategy=passenger-apache
+graceful=true
+
+[users]
+error=/home/error/web/0ther/headcrab
+enikolenko=/home/enikolenko/web/0ther/headcrab
